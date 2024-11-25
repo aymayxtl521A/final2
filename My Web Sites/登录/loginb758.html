@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>澳門城市大學 - 中央認證系統</title>
+  <link rel="stylesheet" href="css/cas.css" />
+  <link rel="stylesheet" href="css/cas-ext.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body id="cas">
+  <div id="container">
+    <div id="content">
+      <div class="box" id="login">
+        <form id="fm1" action="#" method="post" onsubmit="return validateLogin()">
+          <div class="logo"></div>
+
+          <section class="row">
+            <label for="username"><span class="accesskey">U</span>用户名（教师号/学号）:
+              <span id="username-warning" style="display:none;">用户名不能为空</span>
+            </label>
+            <input id="username" name="username" class="required" tabindex="1" accesskey="e" type="text" value=""
+              size="25" autocomplete="off" />
+          </section>
+
+          <section class="row">
+            <label for="password"><span class="accesskey">P</span>密码（与URP平台相同）:
+              <span id="password-warning" style="display:none;">密码不能为空</span>
+            </label>
+            <input id="password" name="password" class="required" tabindex="2" accesskey="p" type="password" value=""
+              size="25" autocomplete="off" />
+          </section>
+
+          <section class="row btn-row">
+            <input class="btn-submit" id="submit" name="submit" accesskey="l" value="登录" tabindex="4" type="submit" />
+          </section>
+        </form>
+      </div>
+    </div> <!-- END #content -->
+  </div> <!-- END #container -->
+
+  <script type="text/javascript">
+    // JavaScript 函数用于验证用户名和密码
+    function validateLogin() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // 检查用户名是否为 '114514' 且密码是否为 '1919810'
+      if (username === "114514" && password === "1919810") {
+        // 登录成功后重定向到本地文件
+        window.location.href = "file:///C:/My%20Web%20Sites/final/soe.cityu.edu.mo/home.html";
+        return false; // 阻止表单提交，因为我们会重定向
+      } else {
+        alert("用户名或密码错误。");
+        return false; // 如果用户名或密码错误，阻止表单提交
+      }
+    }
+  </script>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/cas.js"></script>
+</body>
+
+</html>
